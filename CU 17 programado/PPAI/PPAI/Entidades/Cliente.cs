@@ -8,31 +8,19 @@ namespace PPAI.Entidades
 {
     public class Cliente
     {
-        private int Dni;
-        private string Name;
-        private int NroCel;
+        private int dni;
+        private string nombreCompleto;
+        private int nroCelular;
         
         public Cliente(int dni, string nombre, int nroCel)
         {
-            this.Dni = dni;
-            this.Name = nombre;
-            this.NroCel = nroCel;
+            this.dni = dni;
+            this.nombreCompleto = nombre;
+            this.nroCelular = nroCel;
         }
-        public string NombreCliente
+        public string getNombre
         {
-            get => Name;
-            set => Name = value;
-
-        }
-        public int Doc
-        {
-            get => Dni;
-            set => Dni = value;
-        }
-        public int NroCelCliente
-        {
-            get => NroCelCliente;
-            set => NroCelCliente = value;
+            get => nombreCompleto;
         }
     }
 }

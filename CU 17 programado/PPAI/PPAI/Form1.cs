@@ -2,20 +2,16 @@ using System.Drawing.Text;
 
 namespace PPAI
 {
-    public partial class Form1 : Form
+    public partial class PantallaRegistrarRespuesta : Form
     {
         private bool validacion1;
 
-        public Form1()
+        public PantallaRegistrarRespuesta()
         {
             InitializeComponent();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            cmbValFecha.Items.Add(fecha1);
-            cmbValFecha.Items.Add(fecha2);
-            cmbValFecha.Items.Add(fecha3);
-
             cmbAcciones.Items.Add("Comunicar un saldo");
             cmbAcciones.Items.Add("Dar de baja una tarjeta");
             cmbAcciones.Items.Add("Denunciar un robo");
@@ -25,14 +21,14 @@ namespace PPAI
         {
             if (!validacion1)
             {
-                if (cmbValFecha.SelectedItem.Equals(fecha2))
+                if (txtFecha.Text.Equals("31/10/2002"))
                 {
                     MessageBox.Show("Validado correctamente", "Validacion", MessageBoxButtons.OK);
                     validacion1 = true;
                     lblHijos.Enabled = true;
                     txtHijos.Enabled = true;
                     lblValidacion.Enabled = false;
-                    cmbValFecha.Enabled = false;
+                    txtFecha.Enabled = false;
 
                 }
                 else
@@ -97,6 +93,16 @@ namespace PPAI
         }
 
         private void grpDatosLlamada_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFecha_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }

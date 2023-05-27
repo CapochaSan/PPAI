@@ -1,6 +1,6 @@
 ﻿namespace PPAI
 {
-    partial class Form1
+    partial class PantallaRegistrarRespuesta
     {
         /// <summary>
         ///  Required designer variable.
@@ -39,7 +39,6 @@
             label10 = new Label();
             label6 = new Label();
             lblValidacion = new Label();
-            cmbValFecha = new ComboBox();
             btnValidar = new Button();
             lblHijos = new Label();
             txtHijos = new MaskedTextBox();
@@ -52,6 +51,7 @@
             btnLimpiar = new Button();
             grpDatosLlamada = new GroupBox();
             groupBox1 = new GroupBox();
+            txtFecha = new MaskedTextBox();
             groupBox2 = new GroupBox();
             groupBox3 = new GroupBox();
             grpDatosLlamada.SuspendLayout();
@@ -172,17 +172,6 @@
             lblValidacion.TabIndex = 11;
             lblValidacion.Text = "Fecha de nacimiento:";
             // 
-            // cmbValFecha
-            // 
-            cmbValFecha.BackColor = SystemColors.Info;
-            cmbValFecha.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbValFecha.FormattingEnabled = true;
-            cmbValFecha.Location = new Point(192, 50);
-            cmbValFecha.Name = "cmbValFecha";
-            cmbValFecha.Size = new Size(121, 23);
-            cmbValFecha.Sorted = true;
-            cmbValFecha.TabIndex = 15;
-            // 
             // btnValidar
             // 
             btnValidar.Location = new Point(319, 50);
@@ -267,6 +256,7 @@
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.Size = new Size(360, 87);
             txtDescripcion.TabIndex = 19;
+            txtDescripcion.TextChanged += txtDescripcion_TextChanged;
             // 
             // btnGuardarDesc
             // 
@@ -308,10 +298,10 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(txtFecha);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(btnValidar);
             groupBox1.Controls.Add(lblValidacion);
-            groupBox1.Controls.Add(cmbValFecha);
             groupBox1.Controls.Add(txtHijos);
             groupBox1.Controls.Add(lblHijos);
             groupBox1.Location = new Point(12, 195);
@@ -319,6 +309,17 @@
             groupBox1.Size = new Size(475, 125);
             groupBox1.TabIndex = 21;
             groupBox1.TabStop = false;
+            // 
+            // txtFecha
+            // 
+            txtFecha.Location = new Point(192, 52);
+            txtFecha.Mask = "00/00/0000";
+            txtFecha.Name = "txtFecha";
+            txtFecha.Size = new Size(121, 23);
+            txtFecha.TabIndex = 18;
+            txtFecha.TextAlign = HorizontalAlignment.Center;
+            txtFecha.ValidatingType = typeof(DateTime);
+            txtFecha.MaskInputRejected += txtFecha_MaskInputRejected;
             // 
             // groupBox2
             // 
@@ -343,7 +344,7 @@
             groupBox3.TabIndex = 23;
             groupBox3.TabStop = false;
             // 
-            // Form1
+            // PantallaRegistrarRespuesta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -355,7 +356,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
-            Name = "Form1";
+            Name = "PantallaRegistrarRespuesta";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Registrar respuesta de operador";
             TopMost = true;
@@ -384,7 +385,6 @@
         private Label label10;
         private Label label6;
         private Label lblValidacion;
-        private ComboBox cmbValFecha;
         private Button btnValidar;
         private DateTime fecha1 = new DateTime(2001, 3, 14);
         private DateTime fecha2 = new DateTime(1998, 10, 31); // fecha correcta:
@@ -404,5 +404,6 @@
         private GroupBox groupBox1;
         private GroupBox groupBox2;
         private GroupBox groupBox3;
+        private MaskedTextBox txtFecha;
     }
 }

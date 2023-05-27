@@ -9,15 +9,27 @@ namespace PPAI.Entidades
 {
     public class Estado
     {
-        private string Name;
+        private string nombre;
 
         public Estado(string nombre)
         {
-            this.Name = nombre;
+            this.nombre = nombre;
         }
-        public string NombreEstado
+        public string getNombre
         {
-            get => Name;            
+            get => nombre;            
         }
+        public bool EsEnCurso()
+        {           
+          if (nombre == "EnCurso")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        
     }
 }
