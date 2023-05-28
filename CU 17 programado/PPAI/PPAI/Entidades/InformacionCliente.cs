@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace PPAI.Entidades
 {
-    internal class InformacionCliente
+    public class InformacionCliente
     {
         private string datoAValidar;
+        private List<Validacion> validaciones;
+
+        public InformacionCliente(string datoAValidar)
+        {
+            this.datoAValidar = datoAValidar;
+        }
 
     }
 }

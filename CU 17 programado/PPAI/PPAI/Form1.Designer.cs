@@ -54,6 +54,7 @@
             txtFecha = new MaskedTextBox();
             groupBox2 = new GroupBox();
             groupBox3 = new GroupBox();
+            dateTimePicker1 = new DateTimePicker();
             grpDatosLlamada.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -298,6 +299,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(dateTimePicker1);
             groupBox1.Controls.Add(txtFecha);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(btnValidar);
@@ -343,6 +345,14 @@
             groupBox3.Size = new Size(475, 133);
             groupBox3.TabIndex = 23;
             groupBox3.TabStop = false;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(149, -7);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.TabIndex = 19;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // PantallaRegistrarRespuesta
             // 
@@ -405,5 +415,6 @@
         private GroupBox groupBox2;
         private GroupBox groupBox3;
         private MaskedTextBox txtFecha;
+        private DateTimePicker dateTimePicker1;
     }
 }
