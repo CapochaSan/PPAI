@@ -9,12 +9,12 @@ namespace PPAI.Entidades
     public class Validacion
     {
         private string MensajeValidacion;
-        private string nombre;
+        private TipoInformacion tipo;
 
-        public Validacion(string MensajeValidacion, string nombre)
+        public Validacion(string MensajeValidacion, TipoInformacion tipo)
         {
             this.MensajeValidacion = MensajeValidacion;
-            this.nombre = nombre;
+            this.tipo = tipo;
         }
         public string getMensajeValidacion
         {

@@ -10,11 +10,21 @@ namespace PPAI.Entidades
     {
         private string datoAValidar;
         private Validacion validacion;
-
-        public InformacionCliente(string datoAValidar)
+        private TipoInformacion tipoInformacion;
+        public InformacionCliente(string datoAValidar, TipoInformacion tipoInformacion)
         {
             this.datoAValidar = datoAValidar;
+            this.tipoInformacion = tipoInformacion;
         }
-        
+        public bool esInformacionCorrecta(string respuesta)
+        {
+            if (respuesta == datoAValidar)
+            {
+                
+                return true;
+            }
+            else { return false; }
+            
+        }
     }
 }

@@ -11,9 +11,9 @@ namespace PPAI.Entidades
         private string mensajeOpciones;
         private string nombre;
         private int nroOrden;
-        private List<OpcionLlamada> opcion;
-        private List<string> datosLlamada;
+        private List<OpcionLlamada> opcion;        
         private List<string> mensajesValidaciones;
+        private List<string> nombreCatOpcSub;
 
         public CategoriaLlamada(string mensajeOpciones, string nombre, int nroOrden)
         {
@@ -21,12 +21,15 @@ namespace PPAI.Entidades
             this.nombre = nombre;
             this.nroOrden = nroOrden;
             this.opcion = new List<OpcionLlamada>();
+            this.nombreCatOpcSub = new List<string>();
         }
         public List<string> getNombre(OpcionLlamada opcSeleccionada, SubOpcionLlamada subOpcionSeleccionada)
         {
-            datosLlamada = opcSeleccionada.getNombre(subOpcionSeleccionada);
-            datosLlamada.Add(this.nombre);
-            return datosLlamada;
+
+            nombreCatOpcSub.Add(nombre);
+            nombreCatOpcSub.Add(opcSeleccionada.getNombre(subOpcionSeleccionada)[0]);
+            nombreCatOpcSub.Add(opcSeleccionada.getNombre(subOpcionSeleccionada)[1]);
+            return nombreCatOpcSub;
         }
 
         public List<string> buscarValidacionesDeSubOpcion(OpcionLlamada opcSeleccionada, SubOpcionLlamada subOpcionSeleccionada)

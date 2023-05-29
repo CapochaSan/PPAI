@@ -30,6 +30,17 @@ namespace PPAI.Entidades
                 return false;
             }
         }
-        
+        public bool Finalizada()
+        {
+            if (nombre == "Finalizada")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }

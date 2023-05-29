@@ -22,13 +22,14 @@ namespace PPAI.Entidades
             this.nombre = nombre;
             this.nroOrden = nroOrden;
             validacionesRequeridas = new List<Validacion>();
-            
-    }
+            datosLlamada = new List<string>();
+
+        }
 
         public List<string> getNombre(SubOpcionLlamada subOpcionSeleccionada)
-        {   datosLlamada = new List<string>();
-            datosLlamada.Add(this.nombre);
-            datosLlamada.Add(subOpcionSeleccionada.getNombre);
+        {   
+            datosLlamada.Add(nombre);
+            datosLlamada.Add(subOpcionSeleccionada.getNombre);            
             return datosLlamada;
         }
         public List<string> buscarValidacionesDeSubOpcion(SubOpcionLlamada subOpcionSeleccionada)

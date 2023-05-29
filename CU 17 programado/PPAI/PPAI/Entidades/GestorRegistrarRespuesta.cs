@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,11 +15,17 @@ namespace PPAI.Entidades
         private SubOpcionLlamada subOpcion;
         private Cliente cliente;    
         private DateTime fechaHoraActual;
+        private DateTime fechaHoraFinLlamada;
         private List<string> mensajesValidaciones;
         private string nombreCliente;
         private List<string> nombreCatOpcSub;
         private string fechaAValidar;
         private string cantHijos;
+        private string datoAValidar1;
+        private string datoAValidar2;
+        public string descripcionOperador;
+        public string accionARealizar;
+        private PantallaRegistrarRespuesta pantalla;
 
 
 
@@ -27,22 +34,27 @@ namespace PPAI.Entidades
             this.estados = estados;
             this.mensajesValidaciones = new List<string>();
         }
-        public void nuevaRespuestaOperador(Llamada llamadaCliente, CategoriaLlamada catSeleccionada,OpcionLlamada opcion, SubOpcionLlamada subOpcion)
+        public void nuevaRespuestaOperador(Llamada llamadaCliente, CategoriaLlamada catSeleccionada,OpcionLlamada opcSeleccionada, SubOpcionLlamada subOpcionSeleccionada, PantallaRegistrarRespuesta pantalla)
         {
             this.llamadaCliente = llamadaCliente;
             this.opcion = opcion;
             this.subOpcion = subOpcion;
+            this.pantalla = pantalla;
             recibirLlamada(llamadaCliente);
-            obtenerDatosLlamada(llamadaCliente, catSeleccionada, opcion, subOpcion);
+            obtenerDatosLlamada(llamadaCliente, catSeleccionada, opcSeleccionada, subOpcionSeleccionada);
+            mensajesValidaciones = buscarValidacionesDeSubOpcion(catSeleccionada, opcSeleccionada, subOpcionSeleccionada);
+            pantalla.InitializeComponent();
+            mostrarDatosLlamadas(catSeleccionada, opcSeleccionada, subOpcionSeleccionada, nombreCatOpcSub);
+            pantalla.solicitarRespuestaAValidacion(mensajesValidaciones);
             
         }
 
         public void recibirLlamada(Llamada llamadaCliente)
         {
-            llamadaCliente.tomadaPorOperador(buscarEstadoParaAsignar(), getDateTime());
+            llamadaCliente.tomadaPorOperador(buscarEstadoEnCursoParaAsignar(), getDateTime());
         }
 
-        public Estado buscarEstadoParaAsignar()
+        public Estado buscarEstadoEnCursoParaAsignar()
         {
             foreach (Estado estado in estados)
             {
@@ -74,29 +86,67 @@ namespace PPAI.Entidades
             return mensajesValidaciones;
         }
 
-        public void mostrarDatosLlamadas(PantallaRegistrarRespuesta pantalla, CategoriaLlamada catSeleccionada, OpcionLlamada opcSeleccionada, SubOpcionLlamada subOpcionSeleccionada)
+        public void mostrarDatosLlamadas(CategoriaLlamada catSeleccionada, OpcionLlamada opcSeleccionada, SubOpcionLlamada subOpcionSeleccionada, List<string> nombreCatSubOpc)
         {
-            //mensajesValidaciones = buscarValidacionesDeSubOpcion(catSeleccionada, opcSeleccionada, subOpcionSeleccionada);
-            pantalla.mostrarDatosLlamadas(this, EventArgs.Empty);
-            pantalla.solicitarRespuestaAValidacion();
+            pantalla.mostrarDatosLlamadas(nombreCliente, nombreCatOpcSub);            
         }
 
-        public void tomarIngresoDatoValidacion(string fechaAValidar, string cantHijos)
-        {
-            this.fechaAValidar = fechaAValidar;
-            this.cantHijos = cantHijos;
-        }
-
-        public void tomarIngresoDatoValidacion()
+        public bool tomarIngresoDatoValidacion(Cliente clienteLlamada, string respuesta, bool validado)
         {
 
+            validado = validarInfoCliente(clienteLlamada, respuesta, validado);
+            return validado;
+            
         }
-
-        public void validarInfoCliente(Cliente clienteLlamada)
+        public bool validarInfoCliente(Cliente clienteLlamada, string respuesta, bool validado)
         {
-
+            validado = clienteLlamada.esInfoCorrecta(respuesta, validado);
+            return validado;
         }
 
+        public void eventoValidacionCorrecta()
+        {
+            pantalla.solicitarRespuesta();
+        }
+        public void tomarIngresoRta(string descripcion, string accion)
+        {
+            descripcionOperador = descripcion;
+            accionARealizar = accion;
+            pantalla.solicitarConfirmacion();
+            
+        }
+        public void tomarConfirmacion()
+        {
+            llamarCURegistrarAccionRequerida();
+        }
+        public void llamarCURegistrarAccionRequerida( )
+        {
+            //extend CU: Registrar Accion Requerida
+            pantalla.mostrarAccionRegistrada();
+            finalizarLlamada();
+        }
+        public void finalizarLlamada()
+        {
+            fechaHoraFinLlamada = getDateTime();
+            buscarEstadoFinalizadaParaAsignar();
+            llamadaCliente.finalizarLlamada(buscarEstadoFinalizadaParaAsignar(), getDateTime());
+            finCU();
+        }
+        public Estado buscarEstadoFinalizadaParaAsignar()
+        {
+            foreach (Estado estado in estados)
+            {
+                if (estado.Finalizada())
+                {
+                    return estado;
+                }
+            }
+            return null;
+        }
+        private void finCU()
+        {
+            pantalla.Close();
+        }
     }
 
 }

@@ -10,6 +10,7 @@ namespace PPAI.Entidades
     public class CambioEstado
     {
         private DateTime fechaHoraInicio;
+        private DateTime fechaHoraFin;
         private Estado estado;
 
         public CambioEstado(DateTime fechaHoraInicio, Estado estado)
@@ -20,6 +21,10 @@ namespace PPAI.Entidades
         public DateTime getFechaHoraInicio
         {
             get => fechaHoraInicio;
+        }
+        public DateTime getFechaHoraFin
+        {
+            get => fechaHoraFin;
         }
         public Estado getNombreEstado
         {

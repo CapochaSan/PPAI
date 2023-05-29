@@ -28,7 +28,7 @@ namespace PPAI
         ///  Required method for Designer support - do not modify
         ///  the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
         {
             lblCall = new Label();
             lblTitleNombre = new Label();
@@ -40,10 +40,10 @@ namespace PPAI
             lblSubOpc = new Label();
             lblTitleSubOpc = new Label();
             label6 = new Label();
-            lblValidacion = new Label();
+            lblValidacion1 = new Label();
             btnValidar = new Button();
-            lblHijos = new Label();
-            txtHijos = new MaskedTextBox();
+            lblValidacion2 = new Label();
+            txtValidacion2 = new MaskedTextBox();
             label9 = new Label();
             cmbAcciones = new ComboBox();
             btnRegistrarAccion = new Button();
@@ -53,13 +53,13 @@ namespace PPAI
             btnLimpiar = new Button();
             grpDatosLlamada = new GroupBox();
             grpValidaciones = new GroupBox();
-            txtFecha = new MaskedTextBox();
-            groupBox2 = new GroupBox();
-            groupBox3 = new GroupBox();
+            txtValidacion1 = new MaskedTextBox();
+            grpDescripcion = new GroupBox();
+            grpAccion = new GroupBox();
             grpDatosLlamada.SuspendLayout();
             grpValidaciones.SuspendLayout();
-            groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
+            grpDescripcion.SuspendLayout();
+            grpAccion.SuspendLayout();
             SuspendLayout();
             // 
             // lblCall
@@ -80,9 +80,9 @@ namespace PPAI
             lblTitleNombre.Font = new Font("AmsiPro-LightItalic", 11.25F, FontStyle.Italic, GraphicsUnit.Point);
             lblTitleNombre.Location = new Point(35, 53);
             lblTitleNombre.Name = "lblTitleNombre";
-            lblTitleNombre.Size = new Size(140, 20);
+            lblTitleNombre.Size = new Size(145, 20);
             lblTitleNombre.TabIndex = 0;
-            lblTitleNombre.Text = "Nombre del cliente:";
+            lblTitleNombre.Text = "Nombre del cliente: ";
             // 
             // lblTitleCat
             // 
@@ -90,9 +90,9 @@ namespace PPAI
             lblTitleCat.Font = new Font("AmsiPro-LightItalic", 11.25F, FontStyle.Italic, GraphicsUnit.Point);
             lblTitleCat.Location = new Point(35, 80);
             lblTitleCat.Name = "lblTitleCat";
-            lblTitleCat.Size = new Size(168, 20);
+            lblTitleCat.Size = new Size(173, 20);
             lblTitleCat.TabIndex = 0;
-            lblTitleCat.Text = "Categoria seleccionada:";
+            lblTitleCat.Text = "Categoria seleccionada: ";
             // 
             // lblTitleOpc
             // 
@@ -100,9 +100,9 @@ namespace PPAI
             lblTitleOpc.Font = new Font("AmsiPro-LightItalic", 11.25F, FontStyle.Italic, GraphicsUnit.Point);
             lblTitleOpc.Location = new Point(35, 106);
             lblTitleOpc.Name = "lblTitleOpc";
-            lblTitleOpc.Size = new Size(152, 20);
+            lblTitleOpc.Size = new Size(157, 20);
             lblTitleOpc.TabIndex = 0;
-            lblTitleOpc.Text = "Opción seleccionada:";
+            lblTitleOpc.Text = "Opción seleccionada: ";
             // 
             // lblNombre
             // 
@@ -110,9 +110,8 @@ namespace PPAI
             lblNombre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             lblNombre.Location = new Point(234, 56);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(90, 19);
+            lblNombre.Size = new Size(0, 19);
             lblNombre.TabIndex = 0;
-            lblNombre.Text = "Mauro Ibarra";
             // 
             // lblCat
             // 
@@ -120,9 +119,8 @@ namespace PPAI
             lblCat.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             lblCat.Location = new Point(234, 83);
             lblCat.Name = "lblCat";
-            lblCat.Size = new Size(110, 19);
+            lblCat.Size = new Size(0, 19);
             lblCat.TabIndex = 2;
-            lblCat.Text = "1. Informar robo";
             // 
             // lblOpc
             // 
@@ -130,9 +128,8 @@ namespace PPAI
             lblOpc.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             lblOpc.Location = new Point(234, 109);
             lblOpc.Name = "lblOpc";
-            lblOpc.Size = new Size(155, 19);
+            lblOpc.Size = new Size(0, 19);
             lblOpc.TabIndex = 2;
-            lblOpc.Text = "1. Solicitar nueva tarjeta";
             // 
             // lblSubOpc
             // 
@@ -140,9 +137,8 @@ namespace PPAI
             lblSubOpc.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             lblSubOpc.Location = new Point(233, 136);
             lblSubOpc.Name = "lblSubOpc";
-            lblSubOpc.Size = new Size(229, 19);
+            lblSubOpc.Size = new Size(0, 19);
             lblSubOpc.TabIndex = 2;
-            lblSubOpc.Text = "1. Cuenta con los datos de la tarjeta";
             // 
             // lblTitleSubOpc
             // 
@@ -150,9 +146,9 @@ namespace PPAI
             lblTitleSubOpc.Font = new Font("AmsiPro-LightItalic", 11.25F, FontStyle.Italic, GraphicsUnit.Point);
             lblTitleSubOpc.Location = new Point(35, 133);
             lblTitleSubOpc.Name = "lblTitleSubOpc";
-            lblTitleSubOpc.Size = new Size(182, 20);
+            lblTitleSubOpc.Size = new Size(187, 20);
             lblTitleSubOpc.TabIndex = 0;
-            lblTitleSubOpc.Text = "Sub-opción seleccionada:";
+            lblTitleSubOpc.Text = "Sub-opción seleccionada: ";
             // 
             // label6
             // 
@@ -164,15 +160,14 @@ namespace PPAI
             label6.TabIndex = 9;
             label6.Text = "Ingrese respuesta del cliente";
             // 
-            // lblValidacion
+            // lblValidacion1
             // 
-            lblValidacion.AutoSize = true;
-            lblValidacion.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblValidacion.Location = new Point(49, 50);
-            lblValidacion.Name = "lblValidacion";
-            lblValidacion.Size = new Size(137, 19);
-            lblValidacion.TabIndex = 11;
-            lblValidacion.Text = "Fecha de nacimiento:";
+            lblValidacion1.AutoSize = true;
+            lblValidacion1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblValidacion1.Location = new Point(49, 50);
+            lblValidacion1.Name = "lblValidacion1";
+            lblValidacion1.Size = new Size(0, 19);
+            lblValidacion1.TabIndex = 11;
             // 
             // btnValidar
             // 
@@ -182,29 +177,26 @@ namespace PPAI
             btnValidar.TabIndex = 4;
             btnValidar.Text = "Validar";
             btnValidar.UseVisualStyleBackColor = true;
-            btnValidar.Click += validarClick;
+            btnValidar.Click += tomarIngresoDatoValidacion;
             // 
-            // lblHijos
+            // lblValidacion2
             // 
-            lblHijos.AutoSize = true;
-            lblHijos.Enabled = false;
-            lblHijos.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblHijos.Location = new Point(68, 79);
-            lblHijos.Name = "lblHijos";
-            lblHijos.Size = new Size(118, 19);
-            lblHijos.TabIndex = 16;
-            lblHijos.Text = "Cantidad de hijos:";
+            lblValidacion2.AutoSize = true;
+            lblValidacion2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblValidacion2.Location = new Point(68, 79);
+            lblValidacion2.Name = "lblValidacion2";
+            lblValidacion2.Size = new Size(0, 19);
+            lblValidacion2.TabIndex = 16;
             // 
-            // txtHijos
+            // txtValidacion2
             // 
-            txtHijos.Enabled = false;
-            txtHijos.Location = new Point(192, 79);
-            txtHijos.Mask = "9";
-            txtHijos.Name = "txtHijos";
-            txtHijos.Size = new Size(121, 23);
-            txtHijos.TabIndex = 17;
-            txtHijos.TextAlign = HorizontalAlignment.Center;
-            txtHijos.ValidatingType = typeof(int);
+            txtValidacion2.Location = new Point(192, 79);
+            txtValidacion2.Mask = "9";
+            txtValidacion2.Name = "txtValidacion2";
+            txtValidacion2.Size = new Size(121, 23);
+            txtValidacion2.TabIndex = 17;
+            txtValidacion2.TextAlign = HorizontalAlignment.Center;
+            txtValidacion2.ValidatingType = typeof(int);
             // 
             // label9
             // 
@@ -238,7 +230,7 @@ namespace PPAI
             btnRegistrarAccion.TabIndex = 4;
             btnRegistrarAccion.Text = "Registrar acción requerida";
             btnRegistrarAccion.UseVisualStyleBackColor = true;
-            btnRegistrarAccion.Click += btnRegistrarAccionClick;
+            btnRegistrarAccion.Click += tomarIngresoRta;
             // 
             // label12
             // 
@@ -252,7 +244,6 @@ namespace PPAI
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Enabled = false;
             txtDescripcion.Location = new Point(18, 59);
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
@@ -299,12 +290,12 @@ namespace PPAI
             // 
             // grpValidaciones
             // 
-            grpValidaciones.Controls.Add(txtFecha);
+            grpValidaciones.Controls.Add(txtValidacion1);
             grpValidaciones.Controls.Add(label6);
             grpValidaciones.Controls.Add(btnValidar);
-            grpValidaciones.Controls.Add(lblValidacion);
-            grpValidaciones.Controls.Add(txtHijos);
-            grpValidaciones.Controls.Add(lblHijos);
+            grpValidaciones.Controls.Add(lblValidacion1);
+            grpValidaciones.Controls.Add(txtValidacion2);
+            grpValidaciones.Controls.Add(lblValidacion2);
             grpValidaciones.Location = new Point(12, 195);
             grpValidaciones.Name = "grpValidaciones";
             grpValidaciones.Size = new Size(475, 125);
@@ -312,48 +303,48 @@ namespace PPAI
             grpValidaciones.TabStop = false;
             grpValidaciones.Visible = false;
             // 
-            // txtFecha
+            // txtValidacion1
             // 
-            txtFecha.Location = new Point(192, 52);
-            txtFecha.Mask = "00/00/0000";
-            txtFecha.Name = "txtFecha";
-            txtFecha.Size = new Size(121, 23);
-            txtFecha.TabIndex = 18;
-            txtFecha.TextAlign = HorizontalAlignment.Center;
-            txtFecha.ValidatingType = typeof(DateTime);
+            txtValidacion1.Location = new Point(192, 52);
+            txtValidacion1.Mask = "00/00/0000";
+            txtValidacion1.Name = "txtValidacion1";
+            txtValidacion1.Size = new Size(121, 23);
+            txtValidacion1.TabIndex = 18;
+            txtValidacion1.TextAlign = HorizontalAlignment.Center;
+            txtValidacion1.ValidatingType = typeof(DateTime);
             // 
-            // groupBox2
+            // grpDescripcion
             // 
-            groupBox2.Controls.Add(btnGuardarDesc);
-            groupBox2.Controls.Add(btnLimpiar);
-            groupBox2.Controls.Add(label12);
-            groupBox2.Controls.Add(txtDescripcion);
-            groupBox2.Location = new Point(12, 323);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(475, 163);
-            groupBox2.TabIndex = 22;
-            groupBox2.TabStop = false;
-            groupBox2.Visible = false;
+            grpDescripcion.Controls.Add(btnGuardarDesc);
+            grpDescripcion.Controls.Add(btnLimpiar);
+            grpDescripcion.Controls.Add(label12);
+            grpDescripcion.Controls.Add(txtDescripcion);
+            grpDescripcion.Location = new Point(12, 323);
+            grpDescripcion.Name = "grpDescripcion";
+            grpDescripcion.Size = new Size(475, 163);
+            grpDescripcion.TabIndex = 22;
+            grpDescripcion.TabStop = false;
+            grpDescripcion.Visible = false;
             // 
-            // groupBox3
+            // grpAccion
             // 
-            groupBox3.Controls.Add(btnRegistrarAccion);
-            groupBox3.Controls.Add(cmbAcciones);
-            groupBox3.Controls.Add(label9);
-            groupBox3.Location = new Point(12, 496);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(475, 133);
-            groupBox3.TabIndex = 23;
-            groupBox3.TabStop = false;
-            groupBox3.Visible = false;
+            grpAccion.Controls.Add(btnRegistrarAccion);
+            grpAccion.Controls.Add(cmbAcciones);
+            grpAccion.Controls.Add(label9);
+            grpAccion.Location = new Point(12, 496);
+            grpAccion.Name = "grpAccion";
+            grpAccion.Size = new Size(475, 133);
+            grpAccion.TabIndex = 23;
+            grpAccion.TabStop = false;
+            grpAccion.Visible = false;
             // 
             // PantallaRegistrarRespuesta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(501, 642);
-            Controls.Add(groupBox3);
-            Controls.Add(groupBox2);
+            Controls.Add(grpAccion);
+            Controls.Add(grpDescripcion);
             Controls.Add(grpValidaciones);
             Controls.Add(grpDatosLlamada);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -368,10 +359,10 @@ namespace PPAI
             grpDatosLlamada.PerformLayout();
             grpValidaciones.ResumeLayout(false);
             grpValidaciones.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
+            grpDescripcion.ResumeLayout(false);
+            grpDescripcion.PerformLayout();
+            grpAccion.ResumeLayout(false);
+            grpAccion.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -387,15 +378,15 @@ namespace PPAI
         private Label lblSubOpc;
         private Label lblTitleSubOpc;
         private Label label6;
-        private Label lblValidacion;
+        private Label lblValidacion1;
         private Button btnValidar;
         private DateTime fecha1 = new DateTime(2001, 3, 14);
         private DateTime fecha2 = new DateTime(1998, 10, 31); // fecha correcta:
         private DateTime fecha3 = new DateTime(2000, 2, 01);
         private string descripcionOperador = "";
         private string cantHijosCorrecto = "2";
-        private Label lblHijos;
-        private MaskedTextBox txtHijos;
+        private Label lblValidacion2;
+        private MaskedTextBox txtValidacion2;
         private Label label9;
         private ComboBox cmbAcciones;
         private Button btnRegistrarAccion;
@@ -405,9 +396,10 @@ namespace PPAI
         private Button btnLimpiar;
         private GroupBox grpDatosLlamada;
         private GroupBox grpValidaciones;
-        private GroupBox groupBox2;
-        private GroupBox groupBox3;
-        private MaskedTextBox txtFecha;
+        private GroupBox grpDescripcion;
+        private GroupBox grpAccion;
+        private MaskedTextBox txtValidacion1;
+        private List<String> respuestasValidaciones;
         private Entidades.Validacion validacionA;
         private Entidades.Validacion validacionB;
         private Entidades.InformacionCliente info1;
@@ -424,7 +416,11 @@ namespace PPAI
         private Entidades.GestorRegistrarRespuesta gestorRegistrarRespuesta;
         private HashSet<Estado> estados;
         private List<Validacion> validaciones;
-
-
+        private bool pantallaHab = false;
+        private TipoInformacion tipoInformacionFechaNac;
+        private TipoInformacion tipoInformacionCantHijos;
+        private bool validado = false;
+        private List<InformacionCliente> info;
+        private string mensajeConfirmacion;
     }
 }
