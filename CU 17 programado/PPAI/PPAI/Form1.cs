@@ -1,4 +1,5 @@
 using System.Drawing.Text;
+using PPAI.Entidades;
 
 namespace PPAI
 {
@@ -8,13 +9,64 @@ namespace PPAI
 
         public PantallaRegistrarRespuesta()
         {
+            validacionA = new Validacion("Fecha de nacimiento:","Fecha de nacimiento");
+            validacionB = new Validacion("Cantidad de hijos:", "Cantidad de hijos");
+            
+            validaciones = new List<Validacion>();
+            validaciones.Add(validacionA);
+            validaciones.Add(validacionB);
+
+            info1 = new InformacionCliente("31/10/2002");
+            info2 = new InformacionCliente("3");
+
+            subOpc1 = new SubOpcionLlamada("Cuenta con datos de la tarjeta", 1, validaciones);
+            opc1 = new OpcionLlamada("","Solicita nueva tarjeta", 1);
+            cat1 = new CategoriaLlamada("", "Informar robo", 1);
+
+            clienteLlamada = new Cliente(44551641, "Santiago Vagni", 35152817257);
+            llamadaIniciada = new Llamada("", "", 0,"", clienteLlamada);
+
+            iniciada = new Estado("Iniciada");
+            enCurso = new Estado("En curso");
+            finalizada = new Estado("Finalizada");
+
+            cambioEstadoIniciada = new CambioEstado(fecha1, iniciada);
+
+            estados = new HashSet<Estado>();
+            estados.Add(iniciada);
+            estados.Add(enCurso);
+            estados.Add(finalizada);
+
+            gestorRegistrarRespuesta = new GestorRegistrarRespuesta(estados);
+
+            gestorRegistrarRespuesta.nuevaRespuestaOperador(llamadaIniciada, cat1,opc1,subOpc1);
+
             InitializeComponent();
+
+            gestorRegistrarRespuesta.mostrarDatosLlamadas(this, cat1,opc1,subOpc1);
+
+
         }
         private void Form1_Load(object sender, EventArgs e)
         {
             cmbAcciones.Items.Add("Comunicar un saldo");
             cmbAcciones.Items.Add("Dar de baja una tarjeta");
             cmbAcciones.Items.Add("Denunciar un robo");
+        }
+        public void mostrarDatosLlamadas(object sender, EventArgs e)
+        {
+
+            grpDatosLlamada.Visible = true;
+        }
+
+        public void solicitarRespuestaAValidacion()
+        {
+            grpValidaciones.Visible = true;
+        }
+
+        public void tomarIngresoDatoValidacion()
+        {
+            
         }
 
         private void validarClick(object sender, EventArgs e)
@@ -52,12 +104,6 @@ namespace PPAI
                 }
             }
         }
-
-        private void lblCall_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLimpiarClick(object sender, EventArgs e)
         {
             txtDescripcion.Text = "";
@@ -90,26 +136,6 @@ namespace PPAI
                 // Habilitar el botón porque se seleccionó una opción en el ComboBox
                 btnRegistrarAccion.Enabled = true;
             }
-        }
-
-        private void grpDatosLlamada_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDescripcion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtFecha_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

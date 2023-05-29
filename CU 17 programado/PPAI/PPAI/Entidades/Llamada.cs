@@ -15,13 +15,14 @@ namespace PPAI.Entidades
         private Cliente cliente;
         private List<CambioEstado> cambioEstado;
 
-        public Llamada(string descripcionOperador, string detalleAccionRequerida, int duracion, string observacionAuditor)
+        public Llamada(string descripcionOperador, string detalleAccionRequerida, int duracion, string observacionAuditor, Cliente cliente)
         {
             this.descripcionOperador = descripcionOperador;
             this.detalleAccionRequerida = detalleAccionRequerida;
             this.duracion = duracion;
             this.observacionAuditor = observacionAuditor;
-        }   
+            this.cliente = cliente;
+         }   
 
 
         public CambioEstado tomadaPorOperador(Estado estado, DateTime fechaHora) 
@@ -31,7 +32,7 @@ namespace PPAI.Entidades
         
         public string getNombreClienteDeLlamada()
         {
-            return cliente.getNombre;
-        }
+            return cliente.getNombre();
+        }   
     }
 }

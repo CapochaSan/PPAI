@@ -10,17 +10,19 @@ namespace PPAI.Entidades
     {
         private int dni;
         private string nombreCompleto;
-        private int nroCelular;
+        private long nroCelular;
+        private List<Validacion> info;
         
-        public Cliente(int dni, string nombre, int nroCel)
+        public Cliente(int dni, string nombre, long nroCel)
         {
             this.dni = dni;
             this.nombreCompleto = nombre;
             this.nroCelular = nroCel;
         }
-        public string getNombre
+        public string getNombre()
         {
-            get => nombreCompleto;
+            return nombreCompleto;
         }
+        
     }
 }

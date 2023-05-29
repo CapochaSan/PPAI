@@ -13,11 +13,12 @@ namespace PPAI.Entidades
         private List<Validacion> validacionesRequeridas;
         private List<string> mensajesValidaciones;
 
-        public SubOpcionLlamada(string nombre, int nroOrden)
+        public SubOpcionLlamada(string nombre, int nroOrden, List<Validacion> validacionesRequerida)
         {
             this.nombre = nombre;
             this.nroOrden = nroOrden;
             this.mensajesValidaciones = new List<string>();
+            validacionesRequeridas = validacionesRequerida;
         }
         
         public string getNombre

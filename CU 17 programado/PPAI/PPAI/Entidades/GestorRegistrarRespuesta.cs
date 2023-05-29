@@ -34,6 +34,7 @@ namespace PPAI.Entidades
             this.subOpcion = subOpcion;
             recibirLlamada(llamadaCliente);
             obtenerDatosLlamada(llamadaCliente, catSeleccionada, opcion, subOpcion);
+            
         }
 
         public void recibirLlamada(Llamada llamadaCliente)
@@ -60,6 +61,7 @@ namespace PPAI.Entidades
 
         public void obtenerDatosLlamada(Llamada llamadaCliente, CategoriaLlamada catSeleccionada,OpcionLlamada opcSeleccionada ,SubOpcionLlamada subOpcionSeleccionada)
         {
+      
             nombreCliente = llamadaCliente.getNombreClienteDeLlamada();
             nombreCatOpcSub = catSeleccionada.getNombre(opcSeleccionada,subOpcionSeleccionada);
         }
@@ -72,17 +74,28 @@ namespace PPAI.Entidades
             return mensajesValidaciones;
         }
 
+        public void mostrarDatosLlamadas(PantallaRegistrarRespuesta pantalla, CategoriaLlamada catSeleccionada, OpcionLlamada opcSeleccionada, SubOpcionLlamada subOpcionSeleccionada)
+        {
+            //mensajesValidaciones = buscarValidacionesDeSubOpcion(catSeleccionada, opcSeleccionada, subOpcionSeleccionada);
+            pantalla.mostrarDatosLlamadas(this, EventArgs.Empty);
+            pantalla.solicitarRespuestaAValidacion();
+        }
+
         public void tomarIngresoDatoValidacion(string fechaAValidar, string cantHijos)
         {
             this.fechaAValidar = fechaAValidar;
             this.cantHijos = cantHijos;
         }
-        
-        public void validarInfoCliente()
+
+        public void tomarIngresoDatoValidacion()
         {
 
         }
 
+        public void validarInfoCliente(Cliente clienteLlamada)
+        {
+
+        }
 
     }
 

@@ -1,4 +1,6 @@
-﻿namespace PPAI
+﻿using PPAI.Entidades;
+
+namespace PPAI
 {
     partial class PantallaRegistrarRespuesta
     {
@@ -29,14 +31,14 @@
         private void InitializeComponent()
         {
             lblCall = new Label();
-            label1 = new Label();
-            label2 = new Label();
-            label5 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            label10 = new Label();
+            lblTitleNombre = new Label();
+            lblTitleCat = new Label();
+            lblTitleOpc = new Label();
+            lblNombre = new Label();
+            lblCat = new Label();
+            lblOpc = new Label();
+            lblSubOpc = new Label();
+            lblTitleSubOpc = new Label();
             label6 = new Label();
             lblValidacion = new Label();
             btnValidar = new Button();
@@ -50,13 +52,12 @@
             btnGuardarDesc = new Button();
             btnLimpiar = new Button();
             grpDatosLlamada = new GroupBox();
-            groupBox1 = new GroupBox();
+            grpValidaciones = new GroupBox();
             txtFecha = new MaskedTextBox();
             groupBox2 = new GroupBox();
             groupBox3 = new GroupBox();
-            dateTimePicker1 = new DateTimePicker();
             grpDatosLlamada.SuspendLayout();
-            groupBox1.SuspendLayout();
+            grpValidaciones.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             SuspendLayout();
@@ -73,85 +74,85 @@
             lblCall.Text = "Datos de la llamada";
             lblCall.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label1
+            // lblTitleNombre
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("AmsiPro-LightItalic", 11.25F, FontStyle.Italic, GraphicsUnit.Point);
-            label1.Location = new Point(35, 53);
-            label1.Name = "label1";
-            label1.Size = new Size(140, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Nombre del cliente:";
+            lblTitleNombre.AutoSize = true;
+            lblTitleNombre.Font = new Font("AmsiPro-LightItalic", 11.25F, FontStyle.Italic, GraphicsUnit.Point);
+            lblTitleNombre.Location = new Point(35, 53);
+            lblTitleNombre.Name = "lblTitleNombre";
+            lblTitleNombre.Size = new Size(140, 20);
+            lblTitleNombre.TabIndex = 0;
+            lblTitleNombre.Text = "Nombre del cliente:";
             // 
-            // label2
+            // lblTitleCat
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("AmsiPro-LightItalic", 11.25F, FontStyle.Italic, GraphicsUnit.Point);
-            label2.Location = new Point(35, 80);
-            label2.Name = "label2";
-            label2.Size = new Size(168, 20);
-            label2.TabIndex = 0;
-            label2.Text = "Categoria seleccionada:";
+            lblTitleCat.AutoSize = true;
+            lblTitleCat.Font = new Font("AmsiPro-LightItalic", 11.25F, FontStyle.Italic, GraphicsUnit.Point);
+            lblTitleCat.Location = new Point(35, 80);
+            lblTitleCat.Name = "lblTitleCat";
+            lblTitleCat.Size = new Size(168, 20);
+            lblTitleCat.TabIndex = 0;
+            lblTitleCat.Text = "Categoria seleccionada:";
             // 
-            // label5
+            // lblTitleOpc
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("AmsiPro-LightItalic", 11.25F, FontStyle.Italic, GraphicsUnit.Point);
-            label5.Location = new Point(35, 106);
-            label5.Name = "label5";
-            label5.Size = new Size(152, 20);
-            label5.TabIndex = 0;
-            label5.Text = "Opción seleccionada:";
+            lblTitleOpc.AutoSize = true;
+            lblTitleOpc.Font = new Font("AmsiPro-LightItalic", 11.25F, FontStyle.Italic, GraphicsUnit.Point);
+            lblTitleOpc.Location = new Point(35, 106);
+            lblTitleOpc.Name = "lblTitleOpc";
+            lblTitleOpc.Size = new Size(152, 20);
+            lblTitleOpc.TabIndex = 0;
+            lblTitleOpc.Text = "Opción seleccionada:";
             // 
-            // label3
+            // lblNombre
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(234, 56);
-            label3.Name = "label3";
-            label3.Size = new Size(90, 19);
-            label3.TabIndex = 0;
-            label3.Text = "Mauro Ibarra";
+            lblNombre.AutoSize = true;
+            lblNombre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNombre.Location = new Point(234, 56);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(90, 19);
+            lblNombre.TabIndex = 0;
+            lblNombre.Text = "Mauro Ibarra";
             // 
-            // label4
+            // lblCat
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(234, 83);
-            label4.Name = "label4";
-            label4.Size = new Size(110, 19);
-            label4.TabIndex = 2;
-            label4.Text = "1. Informar robo";
+            lblCat.AutoSize = true;
+            lblCat.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCat.Location = new Point(234, 83);
+            lblCat.Name = "lblCat";
+            lblCat.Size = new Size(110, 19);
+            lblCat.TabIndex = 2;
+            lblCat.Text = "1. Informar robo";
             // 
-            // label7
+            // lblOpc
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(234, 109);
-            label7.Name = "label7";
-            label7.Size = new Size(155, 19);
-            label7.TabIndex = 2;
-            label7.Text = "1. Solicitar nueva tarjeta";
+            lblOpc.AutoSize = true;
+            lblOpc.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblOpc.Location = new Point(234, 109);
+            lblOpc.Name = "lblOpc";
+            lblOpc.Size = new Size(155, 19);
+            lblOpc.TabIndex = 2;
+            lblOpc.Text = "1. Solicitar nueva tarjeta";
             // 
-            // label8
+            // lblSubOpc
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(233, 136);
-            label8.Name = "label8";
-            label8.Size = new Size(229, 19);
-            label8.TabIndex = 2;
-            label8.Text = "1. Cuenta con los datos de la tarjeta";
+            lblSubOpc.AutoSize = true;
+            lblSubOpc.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSubOpc.Location = new Point(233, 136);
+            lblSubOpc.Name = "lblSubOpc";
+            lblSubOpc.Size = new Size(229, 19);
+            lblSubOpc.TabIndex = 2;
+            lblSubOpc.Text = "1. Cuenta con los datos de la tarjeta";
             // 
-            // label10
+            // lblTitleSubOpc
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("AmsiPro-LightItalic", 11.25F, FontStyle.Italic, GraphicsUnit.Point);
-            label10.Location = new Point(35, 133);
-            label10.Name = "label10";
-            label10.Size = new Size(182, 20);
-            label10.TabIndex = 0;
-            label10.Text = "Sub-opción seleccionada:";
+            lblTitleSubOpc.AutoSize = true;
+            lblTitleSubOpc.Font = new Font("AmsiPro-LightItalic", 11.25F, FontStyle.Italic, GraphicsUnit.Point);
+            lblTitleSubOpc.Location = new Point(35, 133);
+            lblTitleSubOpc.Name = "lblTitleSubOpc";
+            lblTitleSubOpc.Size = new Size(182, 20);
+            lblTitleSubOpc.TabIndex = 0;
+            lblTitleSubOpc.Text = "Sub-opción seleccionada:";
             // 
             // label6
             // 
@@ -257,7 +258,6 @@
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.Size = new Size(360, 87);
             txtDescripcion.TabIndex = 19;
-            txtDescripcion.TextChanged += txtDescripcion_TextChanged;
             // 
             // btnGuardarDesc
             // 
@@ -281,36 +281,36 @@
             // 
             // grpDatosLlamada
             // 
-            grpDatosLlamada.Controls.Add(label7);
+            grpDatosLlamada.Controls.Add(lblOpc);
             grpDatosLlamada.Controls.Add(lblCall);
-            grpDatosLlamada.Controls.Add(label1);
-            grpDatosLlamada.Controls.Add(label3);
-            grpDatosLlamada.Controls.Add(label2);
-            grpDatosLlamada.Controls.Add(label5);
-            grpDatosLlamada.Controls.Add(label10);
-            grpDatosLlamada.Controls.Add(label4);
-            grpDatosLlamada.Controls.Add(label8);
+            grpDatosLlamada.Controls.Add(lblTitleNombre);
+            grpDatosLlamada.Controls.Add(lblNombre);
+            grpDatosLlamada.Controls.Add(lblTitleCat);
+            grpDatosLlamada.Controls.Add(lblTitleOpc);
+            grpDatosLlamada.Controls.Add(lblTitleSubOpc);
+            grpDatosLlamada.Controls.Add(lblCat);
+            grpDatosLlamada.Controls.Add(lblSubOpc);
             grpDatosLlamada.Location = new Point(12, 12);
             grpDatosLlamada.Name = "grpDatosLlamada";
             grpDatosLlamada.Size = new Size(475, 177);
             grpDatosLlamada.TabIndex = 20;
             grpDatosLlamada.TabStop = false;
-            grpDatosLlamada.Enter += grpDatosLlamada_Enter;
+            grpDatosLlamada.Visible = false;
             // 
-            // groupBox1
+            // grpValidaciones
             // 
-            groupBox1.Controls.Add(dateTimePicker1);
-            groupBox1.Controls.Add(txtFecha);
-            groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(btnValidar);
-            groupBox1.Controls.Add(lblValidacion);
-            groupBox1.Controls.Add(txtHijos);
-            groupBox1.Controls.Add(lblHijos);
-            groupBox1.Location = new Point(12, 195);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(475, 125);
-            groupBox1.TabIndex = 21;
-            groupBox1.TabStop = false;
+            grpValidaciones.Controls.Add(txtFecha);
+            grpValidaciones.Controls.Add(label6);
+            grpValidaciones.Controls.Add(btnValidar);
+            grpValidaciones.Controls.Add(lblValidacion);
+            grpValidaciones.Controls.Add(txtHijos);
+            grpValidaciones.Controls.Add(lblHijos);
+            grpValidaciones.Location = new Point(12, 195);
+            grpValidaciones.Name = "grpValidaciones";
+            grpValidaciones.Size = new Size(475, 125);
+            grpValidaciones.TabIndex = 21;
+            grpValidaciones.TabStop = false;
+            grpValidaciones.Visible = false;
             // 
             // txtFecha
             // 
@@ -321,7 +321,6 @@
             txtFecha.TabIndex = 18;
             txtFecha.TextAlign = HorizontalAlignment.Center;
             txtFecha.ValidatingType = typeof(DateTime);
-            txtFecha.MaskInputRejected += txtFecha_MaskInputRejected;
             // 
             // groupBox2
             // 
@@ -334,6 +333,7 @@
             groupBox2.Size = new Size(475, 163);
             groupBox2.TabIndex = 22;
             groupBox2.TabStop = false;
+            groupBox2.Visible = false;
             // 
             // groupBox3
             // 
@@ -345,14 +345,7 @@
             groupBox3.Size = new Size(475, 133);
             groupBox3.TabIndex = 23;
             groupBox3.TabStop = false;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(149, -7);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 19;
-            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
+            groupBox3.Visible = false;
             // 
             // PantallaRegistrarRespuesta
             // 
@@ -361,7 +354,7 @@
             ClientSize = new Size(501, 642);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
+            Controls.Add(grpValidaciones);
             Controls.Add(grpDatosLlamada);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
@@ -373,8 +366,8 @@
             Load += Form1_Load;
             grpDatosLlamada.ResumeLayout(false);
             grpDatosLlamada.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            grpValidaciones.ResumeLayout(false);
+            grpValidaciones.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
@@ -385,14 +378,14 @@
         #endregion
 
         private Label lblCall;
-        private Label label1;
-        private Label label2;
-        private Label label5;
-        private Label label3;
-        private Label label4;
-        private Label label7;
-        private Label label8;
-        private Label label10;
+        private Label lblTitleNombre;
+        private Label lblTitleCat;
+        private Label lblTitleOpc;
+        private Label lblNombre;
+        private Label lblCat;
+        private Label lblOpc;
+        private Label lblSubOpc;
+        private Label lblTitleSubOpc;
         private Label label6;
         private Label lblValidacion;
         private Button btnValidar;
@@ -411,10 +404,27 @@
         private Button btnGuardarDesc;
         private Button btnLimpiar;
         private GroupBox grpDatosLlamada;
-        private GroupBox groupBox1;
+        private GroupBox grpValidaciones;
         private GroupBox groupBox2;
         private GroupBox groupBox3;
         private MaskedTextBox txtFecha;
-        private DateTimePicker dateTimePicker1;
+        private Entidades.Validacion validacionA;
+        private Entidades.Validacion validacionB;
+        private Entidades.InformacionCliente info1;
+        private Entidades.InformacionCliente info2;
+        private Entidades.SubOpcionLlamada subOpc1;
+        private Entidades.OpcionLlamada opc1;
+        private Entidades.CategoriaLlamada cat1;
+        private Entidades.Cliente clienteLlamada;
+        private Entidades.Llamada llamadaIniciada;
+        private Entidades.CambioEstado cambioEstadoIniciada;
+        private Entidades.Estado iniciada;
+        private Entidades.Estado enCurso;
+        private Entidades.Estado finalizada;
+        private Entidades.GestorRegistrarRespuesta gestorRegistrarRespuesta;
+        private HashSet<Estado> estados;
+        private List<Validacion> validaciones;
+
+
     }
 }

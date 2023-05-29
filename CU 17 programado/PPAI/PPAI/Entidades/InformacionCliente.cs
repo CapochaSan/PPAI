@@ -9,12 +9,12 @@ namespace PPAI.Entidades
     public class InformacionCliente
     {
         private string datoAValidar;
-        private List<Validacion> validaciones;
+        private Validacion validacion;
 
         public InformacionCliente(string datoAValidar)
         {
             this.datoAValidar = datoAValidar;
         }
-
+        
     }
 }

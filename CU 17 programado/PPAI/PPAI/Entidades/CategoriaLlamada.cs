@@ -8,7 +8,6 @@ namespace PPAI.Entidades
 {
     public class CategoriaLlamada
     {
-        private byte[] audioMensajeOpciones;
         private string mensajeOpciones;
         private string nombre;
         private int nroOrden;
@@ -16,9 +15,8 @@ namespace PPAI.Entidades
         private List<string> datosLlamada;
         private List<string> mensajesValidaciones;
 
-        public CategoriaLlamada(byte[] audioMensajeOpciones, string mensajeOpciones, string nombre, int nroOrden)
+        public CategoriaLlamada(string mensajeOpciones, string nombre, int nroOrden)
         {
-            this.audioMensajeOpciones = audioMensajeOpciones;
             this.mensajeOpciones = mensajeOpciones;
             this.nombre = nombre;
             this.nroOrden = nroOrden;
