@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33717.318
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPAI", "PPAI\PPAI.csproj", "{D9936D24-B25C-44AB-8994-1B513618C417}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PPAI", "PPAI\PPAI.csproj", "{D9936D24-B25C-44AB-8994-1B513618C417}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{2422A3A5-B3B4-4031-9A7F-24C4C5303C67}"
+	ProjectSection(SolutionItems) = preProject
+		Icon2.ico = Icon2.ico
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
