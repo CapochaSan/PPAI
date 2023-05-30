@@ -46,12 +46,21 @@ namespace PPAI.Entidades
         }
         public TimeSpan calcularDuracion()
         {
-            TimeSpan duracion = cambioEstadoEnCursoLlamada.getFechaHoraInicio - cambioEstadoEnCursoLlamada.getFechaHoraFin;
+            TimeSpan duracion = cambioEstadoEnCursoLlamada.getFechaHoraFin() - cambioEstadoEnCursoLlamada.getFechaHoraInicio();
             return duracion;
         }
         public void setDuracion(TimeSpan duracionLlamadaEnCurso)
         {
             this.duracion = duracionLlamadaEnCurso;
         }
+        public void setFechaHoraFin(DateTime fechaHoraFin)
+        {
+            cambioEstadoEnCursoLlamada.setFechaHoraFin(fechaHoraFin);
+        }
+        public TimeSpan getDuracion() 
+        {
+            return duracion;
+        }
+
     }
 }

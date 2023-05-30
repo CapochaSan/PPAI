@@ -14,15 +14,9 @@ namespace PPAI.Entidades
         private OpcionLlamada opcion;
         private SubOpcionLlamada subOpcion;
         private Cliente cliente;    
-        private DateTime fechaHoraActual;
-        private DateTime fechaHoraFinLlamada;
         private List<string> mensajesValidaciones;
         private string nombreCliente;
         private List<string> nombreCatOpcSub;
-        private string fechaAValidar;
-        private string cantHijos;
-        private string datoAValidar1;
-        private string datoAValidar2;
         public string descripcionOperador;
         public string accionARealizar;
         private PantallaRegistrarRespuesta pantalla;
@@ -127,9 +121,10 @@ namespace PPAI.Entidades
         }
         public void finalizarLlamada()
         {
-            fechaHoraFinLlamada = getDateTime();
-            buscarEstadoFinalizadaParaAsignar();
+            llamadaCliente.setFechaHoraFin(getDateTime());
             llamadaCliente.finalizarLlamada(buscarEstadoFinalizadaParaAsignar(), getDateTime());
+            MessageBox.Show("Llamada finalizada con duracion: \n  " +
+                            getDuracion().Minutes + " Minutos " + getDuracion().Seconds + " Segundos", "Llamada finalizada");
             finCU();
         }
         public Estado buscarEstadoFinalizadaParaAsignar()
@@ -143,10 +138,19 @@ namespace PPAI.Entidades
             }
             return null;
         }
+
+        public TimeSpan getDuracion()
+        {
+            return llamadaCliente.calcularDuracion();
+
+
+        }
+
         private void finCU()
         {
             pantalla.Close();
         }
+        
     }
 
 }

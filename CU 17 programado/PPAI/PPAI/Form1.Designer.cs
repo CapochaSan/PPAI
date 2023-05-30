@@ -30,6 +30,7 @@ namespace PPAI
         /// </summary>
         public void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PantallaRegistrarRespuesta));
             lblCall = new Label();
             lblTitleNombre = new Label();
             lblTitleCat = new Label();
@@ -56,6 +57,7 @@ namespace PPAI
             txtValidacion1 = new MaskedTextBox();
             grpDescripcion = new GroupBox();
             grpAccion = new GroupBox();
+            btnFinalizarLlamada = new Button();
             grpDatosLlamada.SuspendLayout();
             grpValidaciones.SuspendLayout();
             grpDescripcion.SuspendLayout();
@@ -66,10 +68,10 @@ namespace PPAI
             // 
             lblCall.AutoSize = true;
             lblCall.FlatStyle = FlatStyle.Popup;
-            lblCall.Font = new Font("AmsiPro-SemiBold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCall.Location = new Point(124, 19);
+            lblCall.Font = new Font("AmsiProNarw-Ultra", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCall.Location = new Point(116, 10);
             lblCall.Name = "lblCall";
-            lblCall.Size = new Size(192, 25);
+            lblCall.Size = new Size(243, 36);
             lblCall.TabIndex = 0;
             lblCall.Text = "Datos de la llamada";
             lblCall.TextAlign = ContentAlignment.TopCenter;
@@ -77,30 +79,30 @@ namespace PPAI
             // lblTitleNombre
             // 
             lblTitleNombre.AutoSize = true;
-            lblTitleNombre.Font = new Font("AmsiPro-LightItalic", 11.25F, FontStyle.Italic, GraphicsUnit.Point);
-            lblTitleNombre.Location = new Point(35, 53);
+            lblTitleNombre.Font = new Font("AmsiProNarw-SemiBold", 12.7499981F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitleNombre.Location = new Point(35, 52);
             lblTitleNombre.Name = "lblTitleNombre";
-            lblTitleNombre.Size = new Size(145, 20);
+            lblTitleNombre.Size = new Size(147, 22);
             lblTitleNombre.TabIndex = 0;
             lblTitleNombre.Text = "Nombre del cliente: ";
             // 
             // lblTitleCat
             // 
             lblTitleCat.AutoSize = true;
-            lblTitleCat.Font = new Font("AmsiPro-LightItalic", 11.25F, FontStyle.Italic, GraphicsUnit.Point);
-            lblTitleCat.Location = new Point(35, 80);
+            lblTitleCat.Font = new Font("AmsiProNarw-SemiBold", 12.7499981F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitleCat.Location = new Point(35, 79);
             lblTitleCat.Name = "lblTitleCat";
-            lblTitleCat.Size = new Size(173, 20);
+            lblTitleCat.Size = new Size(176, 22);
             lblTitleCat.TabIndex = 0;
             lblTitleCat.Text = "Categoria seleccionada: ";
             // 
             // lblTitleOpc
             // 
             lblTitleOpc.AutoSize = true;
-            lblTitleOpc.Font = new Font("AmsiPro-LightItalic", 11.25F, FontStyle.Italic, GraphicsUnit.Point);
-            lblTitleOpc.Location = new Point(35, 106);
+            lblTitleOpc.Font = new Font("AmsiProNarw-SemiBold", 12.7499981F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitleOpc.Location = new Point(35, 105);
             lblTitleOpc.Name = "lblTitleOpc";
-            lblTitleOpc.Size = new Size(157, 20);
+            lblTitleOpc.Size = new Size(158, 22);
             lblTitleOpc.TabIndex = 0;
             lblTitleOpc.Text = "Opción seleccionada: ";
             // 
@@ -143,35 +145,35 @@ namespace PPAI
             // lblTitleSubOpc
             // 
             lblTitleSubOpc.AutoSize = true;
-            lblTitleSubOpc.Font = new Font("AmsiPro-LightItalic", 11.25F, FontStyle.Italic, GraphicsUnit.Point);
-            lblTitleSubOpc.Location = new Point(35, 133);
+            lblTitleSubOpc.Font = new Font("AmsiProNarw-SemiBold", 12.7499981F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitleSubOpc.Location = new Point(35, 132);
             lblTitleSubOpc.Name = "lblTitleSubOpc";
-            lblTitleSubOpc.Size = new Size(187, 20);
+            lblTitleSubOpc.Size = new Size(189, 22);
             lblTitleSubOpc.TabIndex = 0;
             lblTitleSubOpc.Text = "Sub-opción seleccionada: ";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("AmsiPro-SemiBold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(119, 19);
+            label6.Font = new Font("AmsiProNarw-Ultra", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(97, 13);
             label6.Name = "label6";
-            label6.Size = new Size(271, 25);
+            label6.Size = new Size(273, 28);
             label6.TabIndex = 9;
             label6.Text = "Ingrese respuesta del cliente";
             // 
             // lblValidacion1
             // 
             lblValidacion1.AutoSize = true;
-            lblValidacion1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblValidacion1.Location = new Point(49, 50);
+            lblValidacion1.Font = new Font("AmsiProNarw-SemiBold", 12.7499981F, FontStyle.Regular, GraphicsUnit.Point);
+            lblValidacion1.Location = new Point(38, 50);
             lblValidacion1.Name = "lblValidacion1";
             lblValidacion1.Size = new Size(0, 19);
             lblValidacion1.TabIndex = 11;
             // 
             // btnValidar
             // 
-            btnValidar.Location = new Point(319, 50);
+            btnValidar.Location = new Point(321, 50);
             btnValidar.Name = "btnValidar";
             btnValidar.Size = new Size(75, 52);
             btnValidar.TabIndex = 4;
@@ -182,15 +184,15 @@ namespace PPAI
             // lblValidacion2
             // 
             lblValidacion2.AutoSize = true;
-            lblValidacion2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblValidacion2.Location = new Point(68, 79);
+            lblValidacion2.Font = new Font("AmsiProNarw-SemiBold", 12.7499981F, FontStyle.Regular, GraphicsUnit.Point);
+            lblValidacion2.Location = new Point(58, 79);
             lblValidacion2.Name = "lblValidacion2";
             lblValidacion2.Size = new Size(0, 19);
             lblValidacion2.TabIndex = 16;
             // 
             // txtValidacion2
             // 
-            txtValidacion2.Location = new Point(192, 79);
+            txtValidacion2.Location = new Point(194, 79);
             txtValidacion2.Mask = "9";
             txtValidacion2.Name = "txtValidacion2";
             txtValidacion2.Size = new Size(121, 23);
@@ -201,10 +203,10 @@ namespace PPAI
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("AmsiPro-SemiBold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(68, 19);
+            label9.Font = new Font("AmsiProNarw-Ultra", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Location = new Point(53, 19);
             label9.Name = "label9";
-            label9.Size = new Size(357, 25);
+            label9.Size = new Size(358, 28);
             label9.TabIndex = 18;
             label9.Text = "Ingrese accion solicidata por el cliente";
             // 
@@ -214,7 +216,7 @@ namespace PPAI
             cmbAcciones.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbAcciones.Enabled = false;
             cmbAcciones.FormattingEnabled = true;
-            cmbAcciones.Location = new Point(68, 56);
+            cmbAcciones.Location = new Point(49, 60);
             cmbAcciones.Name = "cmbAcciones";
             cmbAcciones.Size = new Size(362, 23);
             cmbAcciones.Sorted = true;
@@ -224,7 +226,8 @@ namespace PPAI
             // btnRegistrarAccion
             // 
             btnRegistrarAccion.Enabled = false;
-            btnRegistrarAccion.Location = new Point(140, 89);
+            btnRegistrarAccion.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRegistrarAccion.Location = new Point(128, 97);
             btnRegistrarAccion.Name = "btnRegistrarAccion";
             btnRegistrarAccion.Size = new Size(209, 30);
             btnRegistrarAccion.TabIndex = 4;
@@ -235,16 +238,16 @@ namespace PPAI
             // label12
             // 
             label12.AutoSize = true;
-            label12.Font = new Font("AmsiPro-SemiBold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.Location = new Point(14, 20);
+            label12.Font = new Font("AmsiProNarw-Ultra", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.Location = new Point(6, 19);
             label12.Name = "label12";
-            label12.Size = new Size(453, 25);
+            label12.Size = new Size(455, 28);
             label12.TabIndex = 9;
             label12.Text = "Ingrese descripcion de la respuesta del operador";
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(18, 59);
+            txtDescripcion.Location = new Point(21, 59);
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.Size = new Size(360, 87);
@@ -272,6 +275,7 @@ namespace PPAI
             // 
             // grpDatosLlamada
             // 
+            grpDatosLlamada.BackColor = SystemColors.Control;
             grpDatosLlamada.Controls.Add(lblOpc);
             grpDatosLlamada.Controls.Add(lblCall);
             grpDatosLlamada.Controls.Add(lblTitleNombre);
@@ -281,7 +285,7 @@ namespace PPAI
             grpDatosLlamada.Controls.Add(lblTitleSubOpc);
             grpDatosLlamada.Controls.Add(lblCat);
             grpDatosLlamada.Controls.Add(lblSubOpc);
-            grpDatosLlamada.Location = new Point(12, 12);
+            grpDatosLlamada.Location = new Point(12, 7);
             grpDatosLlamada.Name = "grpDatosLlamada";
             grpDatosLlamada.Size = new Size(475, 177);
             grpDatosLlamada.TabIndex = 20;
@@ -290,13 +294,14 @@ namespace PPAI
             // 
             // grpValidaciones
             // 
+            grpValidaciones.BackColor = SystemColors.Control;
             grpValidaciones.Controls.Add(txtValidacion1);
             grpValidaciones.Controls.Add(label6);
             grpValidaciones.Controls.Add(btnValidar);
             grpValidaciones.Controls.Add(lblValidacion1);
             grpValidaciones.Controls.Add(txtValidacion2);
             grpValidaciones.Controls.Add(lblValidacion2);
-            grpValidaciones.Location = new Point(12, 195);
+            grpValidaciones.Location = new Point(12, 185);
             grpValidaciones.Name = "grpValidaciones";
             grpValidaciones.Size = new Size(475, 125);
             grpValidaciones.TabIndex = 21;
@@ -305,7 +310,7 @@ namespace PPAI
             // 
             // txtValidacion1
             // 
-            txtValidacion1.Location = new Point(192, 52);
+            txtValidacion1.Location = new Point(194, 52);
             txtValidacion1.Mask = "00/00/0000";
             txtValidacion1.Name = "txtValidacion1";
             txtValidacion1.Size = new Size(121, 23);
@@ -315,11 +320,12 @@ namespace PPAI
             // 
             // grpDescripcion
             // 
+            grpDescripcion.BackColor = SystemColors.Control;
             grpDescripcion.Controls.Add(btnGuardarDesc);
             grpDescripcion.Controls.Add(btnLimpiar);
             grpDescripcion.Controls.Add(label12);
             grpDescripcion.Controls.Add(txtDescripcion);
-            grpDescripcion.Location = new Point(12, 323);
+            grpDescripcion.Location = new Point(12, 312);
             grpDescripcion.Name = "grpDescripcion";
             grpDescripcion.Size = new Size(475, 163);
             grpDescripcion.TabIndex = 22;
@@ -328,26 +334,47 @@ namespace PPAI
             // 
             // grpAccion
             // 
+            grpAccion.BackColor = SystemColors.Control;
             grpAccion.Controls.Add(btnRegistrarAccion);
             grpAccion.Controls.Add(cmbAcciones);
             grpAccion.Controls.Add(label9);
-            grpAccion.Location = new Point(12, 496);
+            grpAccion.Location = new Point(12, 477);
             grpAccion.Name = "grpAccion";
             grpAccion.Size = new Size(475, 133);
             grpAccion.TabIndex = 23;
             grpAccion.TabStop = false;
             grpAccion.Visible = false;
             // 
+            // btnFinalizarLlamada
+            // 
+            btnFinalizarLlamada.BackColor = Color.Firebrick;
+            btnFinalizarLlamada.BackgroundImage = (Image)resources.GetObject("btnFinalizarLlamada.BackgroundImage");
+            btnFinalizarLlamada.BackgroundImageLayout = ImageLayout.Center;
+            btnFinalizarLlamada.Cursor = Cursors.Hand;
+            btnFinalizarLlamada.FlatStyle = FlatStyle.Flat;
+            btnFinalizarLlamada.ForeColor = Color.Maroon;
+            btnFinalizarLlamada.Location = new Point(169, 616);
+            btnFinalizarLlamada.Name = "btnFinalizarLlamada";
+            btnFinalizarLlamada.Size = new Size(163, 26);
+            btnFinalizarLlamada.TabIndex = 4;
+            btnFinalizarLlamada.UseVisualStyleBackColor = false;
+            btnFinalizarLlamada.Click += btnFinalizarLlamada_Click_1;
+            btnFinalizarLlamada.MouseEnter += btnFinalizarLlamada_MouseEnter_1;
+            btnFinalizarLlamada.MouseLeave += btnFinalizarLlamada_MouseLeave_1;
+            // 
             // PantallaRegistrarRespuesta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(501, 642);
+            BackColor = SystemColors.Menu;
+            ClientSize = new Size(500, 645);
+            Controls.Add(btnFinalizarLlamada);
             Controls.Add(grpAccion);
             Controls.Add(grpDescripcion);
             Controls.Add(grpValidaciones);
             Controls.Add(grpDatosLlamada);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
             Name = "PantallaRegistrarRespuesta";
@@ -380,11 +407,6 @@ namespace PPAI
         private Label label6;
         private Label lblValidacion1;
         private Button btnValidar;
-        private DateTime fecha1 = new DateTime(2001, 3, 14);
-        private DateTime fecha2 = new DateTime(1998, 10, 31); // fecha correcta:
-        private DateTime fecha3 = new DateTime(2000, 2, 01);
-        private string descripcionOperador = "";
-        private string cantHijosCorrecto = "2";
         private Label lblValidacion2;
         private MaskedTextBox txtValidacion2;
         private Label label9;
@@ -413,6 +435,7 @@ namespace PPAI
         private Entidades.Estado iniciada;
         private Entidades.Estado enCurso;
         private Entidades.Estado finalizada;
+        private string descripcionOperador = "";
         private Entidades.GestorRegistrarRespuesta gestorRegistrarRespuesta;
         private HashSet<Estado> estados;
         private List<Validacion> validaciones;
@@ -422,5 +445,6 @@ namespace PPAI
         private bool validado = false;
         private List<InformacionCliente> info;
         private string mensajeConfirmacion;
+        private Button btnFinalizarLlamada;
     }
 }

@@ -15,20 +15,20 @@ namespace PPAI.Entidades
 
         public CambioEstado(DateTime fechaHoraInicio, Estado estado)
         {
-            fechaHoraInicio = fechaHoraInicio;
-            estado = estado;
+            this.fechaHoraInicio = fechaHoraInicio;
+            this.estado = estado;
         }
-        public DateTime getFechaHoraInicio
+        public DateTime getFechaHoraInicio()
         {
-            get => fechaHoraInicio;
+            return fechaHoraInicio;
         }
-        public DateTime getFechaHoraFin
+        public DateTime getFechaHoraFin()
         {
-            get => fechaHoraFin;
+            return fechaHoraFin;
         }
-        public Estado getNombreEstado
+        public void setFechaHoraFin(DateTime fechaHoraFin)
         {
-            get => estado;
+            this.fechaHoraFin = fechaHoraFin;
         }
     }
 }

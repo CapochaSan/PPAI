@@ -9,6 +9,7 @@ namespace PPAI
     {
         public PantallaRegistrarRespuesta()
         {
+
             info = new List<InformacionCliente>();
             respuestasValidaciones = new List<string>();
             tipoInformacionFechaNac = new TipoInformacion("Fecha de nacimiento");
@@ -39,7 +40,6 @@ namespace PPAI
             enCurso = new Estado("En curso");
             finalizada = new Estado("Finalizada");
 
-            cambioEstadoIniciada = new CambioEstado(fecha1, iniciada);
 
             estados = new HashSet<Estado>();
             estados.Add(iniciada);
@@ -47,7 +47,7 @@ namespace PPAI
             estados.Add(finalizada);
 
             gestorRegistrarRespuesta = new GestorRegistrarRespuesta(estados);
-
+            cambioEstadoIniciada = new CambioEstado(gestorRegistrarRespuesta.getDateTime(), iniciada);
             gestorRegistrarRespuesta.nuevaRespuestaOperador(llamadaIniciada, cat1, opc1, subOpc1, this);
         }
 
@@ -117,7 +117,7 @@ namespace PPAI
         public void solicitarConfirmacion()
         {
             mensajeConfirmacion = "Confirme si desea proceder a registrar \n\n" +
-                                  "Datos:" +  "\n - "
+                                  "Datos:" + "\n - "
                                   + lblTitleNombre.Text + lblNombre.Text + "\n - "
                                   + lblTitleCat.Text + lblCat.Text + "\n - "
                                   + lblTitleOpc.Text + lblOpc.Text + "\n - "
@@ -133,8 +133,8 @@ namespace PPAI
             if (confirmacion == DialogResult.Yes)
             {
                 gestorRegistrarRespuesta.tomarConfirmacion();
-                
-                
+
+
             }
             else if (confirmacion == DialogResult.No)
             {
@@ -152,8 +152,9 @@ namespace PPAI
             if (!string.IsNullOrEmpty(txtDescripcion.Text))
             {
                 // El TextBox no está vacío
-                cmbAcciones.Enabled = true; 
+                cmbAcciones.Enabled = true;
                 grpAccion.Enabled = true;
+                MessageBox.Show("Se guardo la descripción", "Descripción guardada", MessageBoxButtons.OK);
             }
             else
             {
@@ -167,6 +168,20 @@ namespace PPAI
                 // Habilitar el botón porque se seleccionó una opción en el ComboBox
                 btnRegistrarAccion.Enabled = true;
             }
+        }
+        private void btnFinalizarLlamada_Click_1(object sender, EventArgs e)
+        {
+
+            gestorRegistrarRespuesta.finalizarLlamada();
+
+        }
+        private void btnFinalizarLlamada_MouseEnter_1(object sender, EventArgs e)
+        {
+            btnFinalizarLlamada.BackColor = Color.Red;
+        }
+        private void btnFinalizarLlamada_MouseLeave_1(object sender, EventArgs e)
+        {
+            btnFinalizarLlamada.BackColor = Color.Firebrick;
         }
     }
 }
