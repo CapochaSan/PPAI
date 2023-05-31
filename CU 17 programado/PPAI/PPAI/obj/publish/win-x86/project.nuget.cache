@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "LoQTcH34ZzwuqC/alqi73oYEJnDRhx1YYVAwcgq0bh3KiFGx8GQNZkupVyemwLjo4e5v1IpvAWZ8tUFXnoG02g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Santiago\\Desktop\\PPAI\\CU 17 programado\\PPAI\\PPAI\\PPAI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Santiago\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\6.0.16\\microsoft.netcore.app.runtime.win-x86.6.0.16.nupkg.sha512",
+    "C:\\Users\\Santiago\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\6.0.16\\microsoft.windowsdesktop.app.runtime.win-x86.6.0.16.nupkg.sha512",
+    "C:\\Users\\Santiago\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\6.0.16\\microsoft.aspnetcore.app.runtime.win-x86.6.0.16.nupkg.sha512"
+  ],
+  "logs": []
+}

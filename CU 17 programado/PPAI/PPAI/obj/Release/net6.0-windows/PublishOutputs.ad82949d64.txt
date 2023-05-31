@@ -1,0 +1,4 @@
+C:\Users\Santiago\Desktop\PPAI.exe
+C:\Users\Santiago\Desktop\PPAI.dll
+C:\Users\Santiago\Desktop\PPAI.deps.json
+C:\Users\Santiago\Desktop\PPAI.runtimeconfig.json

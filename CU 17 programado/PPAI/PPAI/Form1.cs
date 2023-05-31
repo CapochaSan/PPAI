@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using System.Drawing.Text;
+using System.Windows.Forms;
 using System.Xml.Linq;
 using PPAI.Entidades;
 
@@ -171,8 +172,12 @@ namespace PPAI
         }
         private void btnFinalizarLlamada_Click_1(object sender, EventArgs e)
         {
+            DialogResult confirmacion = MessageBox.Show("¿Seguro que desea finalizar la llamada?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (confirmacion == DialogResult.Yes)
+            {
+                gestorRegistrarRespuesta.finalizarLlamada();
+            }
 
-            gestorRegistrarRespuesta.finalizarLlamada();
 
         }
         private void btnFinalizarLlamada_MouseEnter_1(object sender, EventArgs e)
@@ -182,6 +187,25 @@ namespace PPAI
         private void btnFinalizarLlamada_MouseLeave_1(object sender, EventArgs e)
         {
             btnFinalizarLlamada.BackColor = Color.Firebrick;
+        }
+        private void PantallaRegistrarRespuesta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Escape)
+            {
+                // Ejecutar la función correspondiente
+                btnFinalizarLlamada_Click_1(null, null);
+
+                // Evitar que el carácter Enter se inserte en el cuadro de texto
+                e.Handled = true;
+            }
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                // Ejecutar la función correspondiente
+                tomarIngresoDatoValidacion(null, null);
+
+                // Evitar que el carácter Enter se inserte en el cuadro de texto
+                e.Handled = true;
+            }
         }
     }
 }

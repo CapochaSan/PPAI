@@ -13,9 +13,14 @@
         <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
       </group>
     </frameworkReferences>
+    <contentFiles>
+      <files include="any/net6.0-windows7.0/403020_avatar_male_support_user_headset_icon.ico" buildAction="Content" />
+    </contentFiles>
   </metadata>
   <files>
-    <file src="C:\Users\Santiago\Desktop\DSI\PPAI\CU 17 programado\PPAI\PPAI\bin\Debug\net6.0-windows\PPAI.runtimeconfig.json" target="lib\net6.0-windows7.0\PPAI.runtimeconfig.json" />
-    <file src="C:\Users\Santiago\Desktop\DSI\PPAI\CU 17 programado\PPAI\PPAI\bin\Debug\net6.0-windows\PPAI.dll" target="lib\net6.0-windows7.0\PPAI.dll" />
+    <file src="C:\Users\Santiago\Desktop\PPAI\CU 17 programado\PPAI\PPAI\bin\Debug\net6.0-windows\PPAI.runtimeconfig.json" target="lib\net6.0-windows7.0\PPAI.runtimeconfig.json" />
+    <file src="C:\Users\Santiago\Desktop\PPAI\CU 17 programado\PPAI\PPAI\bin\Debug\net6.0-windows\PPAI.dll" target="lib\net6.0-windows7.0\PPAI.dll" />
+    <file src="C:\Users\Santiago\Desktop\PPAI\CU 17 programado\PPAI\PPAI\403020_avatar_male_support_user_headset_icon.ico" target="content\403020_avatar_male_support_user_headset_icon.ico" />
+    <file src="C:\Users\Santiago\Desktop\PPAI\CU 17 programado\PPAI\PPAI\403020_avatar_male_support_user_headset_icon.ico" target="contentFiles\any\net6.0-windows7.0\403020_avatar_male_support_user_headset_icon.ico" />
   </files>
 </package>

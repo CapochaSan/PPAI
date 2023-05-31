@@ -118,6 +118,34 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAdtJREFUSEvdlM1OwlAQhQlGn6VUEKTlOST4H9/FC24EhMhCuLg3LngBgbhRazRq
+        ogvlp1WXysKFqFutd5qpRRhodWPiSb6kuT1zpszQ+v635Mr1hFo2FgW7Stloqdx4A6xrcRbjxgJ40P4z
+        qSV9VuHGvQgyRyE8d2q5ncAyd81XzDGV6zkqbBRKWd/wMdOPMcMlwvNUgBcUrmcxhhaMhSq0eXruWlD3
+        bJRtI45x3wXLUnj7kSqy8dSgpHfIxce4vkIV9BJI1iyoe72IB13GWEfRrZtjyvwbprcahxjrKFpsvVBm
+        oKA9fI3HbURAtNTsYqwjlbffKTMQzp1Zo/HaALIw1pE4/CDNPXhtIHbwgbGOxA6G/gIbrw0gC2MdRQpX
+        Q3dg47VBZPNycAdTmVONMvfitUEwe3KAsY7kZH1ZKTbIAhsvDaLFpjm5tr+EsY6U7YvxUFoj32Q7uB/K
+        G0ofdWRWoT/hEttLhPPnA0X2G9xPvw9qA6m9GYyjJbFaLpy/GCh2A2qk1XoGY0aIMb/EqtlgWjPddgKA
+        J7iumVKymoFaTHFXgFXjUrJ2C40ihUvx3xbNuG4B13AG98DjOpZhgsXLqfq8GNuOmHlTPOUrYF2LM5nV
+        5sCD9r+Qz/cJERK2iUlqyXgAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="pictureBox1.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAdtJREFUSEvdlM1OwlAQhQlGn6VUEKTlOST4H9/FC24EhMhCuLg3LngBgbhRazRq
+        ogvlp1WXysKFqFutd5qpRRhodWPiSb6kuT1zpszQ+v635Mr1hFo2FgW7Stloqdx4A6xrcRbjxgJ40P4z
+        qSV9VuHGvQgyRyE8d2q5ncAyd81XzDGV6zkqbBRKWd/wMdOPMcMlwvNUgBcUrmcxhhaMhSq0eXruWlD3
+        bJRtI45x3wXLUnj7kSqy8dSgpHfIxce4vkIV9BJI1iyoe72IB13GWEfRrZtjyvwbprcahxjrKFpsvVBm
+        oKA9fI3HbURAtNTsYqwjlbffKTMQzp1Zo/HaALIw1pE4/CDNPXhtIHbwgbGOxA6G/gIbrw0gC2MdRQpX
+        Q3dg47VBZPNycAdTmVONMvfitUEwe3KAsY7kZH1ZKTbIAhsvDaLFpjm5tr+EsY6U7YvxUFoj32Q7uB/K
+        G0ofdWRWoT/hEttLhPPnA0X2G9xPvw9qA6m9GYyjJbFaLpy/GCh2A2qk1XoGY0aIMb/EqtlgWjPddgKA
+        J7iumVKymoFaTHFXgFXjUrJ2C40ihUvx3xbNuG4B13AG98DjOpZhgsXLqfq8GNuOmHlTPOUrYF2LM5nV
+        5sCD9r+Qz/cJERK2iUlqyXgAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btnFinalizarLlamada.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
