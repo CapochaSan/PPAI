@@ -42,5 +42,9 @@ namespace PPAI.Entidades
             }
         }
 
+        public static explicit operator Estado(int v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

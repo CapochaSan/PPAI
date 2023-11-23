@@ -26,7 +26,7 @@ namespace PPAI.Entidades
             cambioEstado = new List<CambioEstado>();
          }   
 
-
+        
         public void tomadaPorOperador(Estado estado, DateTime fechaHora) 
         {
             cambioEstadoEnCursoLlamada = new CambioEstado(fechaHora, estado);
@@ -61,6 +61,27 @@ namespace PPAI.Entidades
         {
             return duracion;
         }
+        public String getDescripcion()
+        {
+            return descripcionOperador;
+        }
+        public String getDetallr()
+        {
+            return detalleAccionRequerida;
+        }
+        public void setDetalle(String detalleAccionRequerida)
+        {
+            this.detalleAccionRequerida = detalleAccionRequerida;
+        }
 
+        public void setDescripcion(String descripcion)
+        {
+            this.descripcionOperador = descripcion;
+        }
+
+        public Cliente getCliente()
+        {
+            return cliente;
+        }
     }
 }

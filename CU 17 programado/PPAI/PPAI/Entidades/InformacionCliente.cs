@@ -16,6 +16,11 @@ namespace PPAI.Entidades
             this.datoAValidar = datoAValidar;
             this.tipoInformacion = tipoInformacion;
         }
+        public void setValidacion(Validacion validacion)
+        {
+            this.validacion = validacion;
+        }
+
         public bool esInformacionCorrecta(string respuesta)
         {
             if (respuesta == datoAValidar)
@@ -26,5 +31,20 @@ namespace PPAI.Entidades
             else { return false; }
             
         }
+        public bool esValidacion(Validacion val)
+        {
+            if (val == validacion)
+            {
+
+                return true;
+            }
+            else { return false; }
+
+        }
+        public String toString()
+        {
+            return datoAValidar + " " + validacion.getMensajeValidacion + " ";
+        }
+
     }
 }

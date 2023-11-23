@@ -2,6 +2,7 @@ using System.ComponentModel;
 using System.Drawing.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using PPAI.Acceso_a_datos;
 using PPAI.Entidades;
 
 namespace PPAI
@@ -10,9 +11,21 @@ namespace PPAI
     {
         public PantallaRegistrarRespuesta()
         {
+            string connectionString = "Data Source=DESKTOP-R3TMJNQ\\SQLEXPRESS;Initial Catalog=TPI;Integrated Security=True";
+                     
+            RepoEstado repoEstado = new RepoEstado();
+            HashSet<Estado> estados = repoEstado.GetEstados();
+            //foreach(Estado estado in estados)
+            //{
+            //    MessageBox.Show(estado.getNombre);
+            //}
+            
 
             info = new List<InformacionCliente>();
             respuestasValidaciones = new List<string>();
+
+
+
             tipoInformacionFechaNac = new TipoInformacion("Fecha de nacimiento");
             tipoInformacionCantHijos = new TipoInformacion("Cantidad de hijos");
 
@@ -27,14 +40,19 @@ namespace PPAI
 
             info1 = new InformacionCliente("31/10/2002", tipoInformacionFechaNac);
             info2 = new InformacionCliente("3", tipoInformacionCantHijos);
+            info1.setValidacion(validacionA);
+            info2.setValidacion(validacionB);
             info.Add(info1);
             info.Add(info2);
+
 
             subOpc1 = new SubOpcionLlamada("Cuenta con datos de la tarjeta", 1, validaciones);
             opc1 = new OpcionLlamada("", "Solicita nueva tarjeta", 1);
             cat1 = new CategoriaLlamada("", "Informar robo", 1);
 
             clienteLlamada = new Cliente(44551641, "Santiago Vagni", 35152817257, info);
+            RepoCliente repo = new RepoCliente();
+            MessageBox.Show(repo.GetIdCliente(clienteLlamada).ToString());
             llamadaIniciada = new Llamada("", "", "", clienteLlamada);
 
             iniciada = new Estado("Iniciada");
@@ -42,10 +60,10 @@ namespace PPAI
             finalizada = new Estado("Finalizada");
 
 
-            estados = new HashSet<Estado>();
-            estados.Add(iniciada);
-            estados.Add(enCurso);
-            estados.Add(finalizada);
+            //estados = new HashSet<Estado>();
+            //estados.Add(iniciada);
+            //estados.Add(enCurso);
+            //estados.Add(finalizada);
 
             gestorRegistrarRespuesta = new GestorRegistrarRespuesta(estados);
             cambioEstadoIniciada = new CambioEstado(gestorRegistrarRespuesta.getDateTime(), iniciada);
@@ -78,7 +96,7 @@ namespace PPAI
             respuestasValidaciones[0] = txtValidacion1.Text;
             respuestasValidaciones[1] = txtValidacion2.Text;
 
-            if (gestorRegistrarRespuesta.tomarIngresoDatoValidacion(clienteLlamada, respuestasValidaciones[0], validado) && gestorRegistrarRespuesta.tomarIngresoDatoValidacion(clienteLlamada, respuestasValidaciones[1], validado))
+            if (gestorRegistrarRespuesta.tomarIngresoDatoValidacion(clienteLlamada, respuestasValidaciones[0], validado,validacionA) && gestorRegistrarRespuesta.tomarIngresoDatoValidacion(clienteLlamada, respuestasValidaciones[1], validado, validacionB))
             {
                 validado = true;
             }

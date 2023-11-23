@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PPAI.Acceso_a_datos;
 
 namespace PPAI.Entidades
 {
@@ -85,16 +86,16 @@ namespace PPAI.Entidades
             pantalla.mostrarDatosLlamadas(nombreCliente, nombreCatOpcSub);            
         }
 
-        public bool tomarIngresoDatoValidacion(Cliente clienteLlamada, string respuesta, bool validado)
+        public bool tomarIngresoDatoValidacion(Cliente clienteLlamada, string respuesta, bool validado, Validacion validacion)
         {
 
-            validado = validarInfoCliente(clienteLlamada, respuesta, validado);
+            validado = validarInfoCliente(clienteLlamada, respuesta, validado, validacion);
             return validado;
             
         }
-        public bool validarInfoCliente(Cliente clienteLlamada, string respuesta, bool validado)
+        public bool validarInfoCliente(Cliente clienteLlamada, string respuesta, bool validado, Validacion validacion)
         {
-            validado = clienteLlamada.esInfoCorrecta(respuesta, validado);
+            validado = clienteLlamada.esInfoCorrecta(respuesta, validado, validacion);
             return validado;
         }
 
@@ -125,6 +126,10 @@ namespace PPAI.Entidades
             llamadaCliente.finalizarLlamada(buscarEstadoFinalizadaParaAsignar(), getDateTime());
             MessageBox.Show("Llamada finalizada con duracion: \n  " +
                             getDuracion().Minutes + " Minutos " + getDuracion().Seconds + " Segundos", "Llamada finalizada");
+            RepoLlamada repoLlamada = new RepoLlamada();
+            llamadaCliente.setDescripcion(descripcionOperador);
+            llamadaCliente.setDetalle(accionARealizar);
+            repoLlamada.add(llamadaCliente);
             finCU();
         }
         public Estado buscarEstadoFinalizadaParaAsignar()
